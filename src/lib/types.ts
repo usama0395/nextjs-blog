@@ -1,17 +1,19 @@
 
+import type { PortableTextBlock } from "sanity";
+
 export interface BlogsData {
-  title:string  
-  smallDescription:string  
-  currentSlug:string  
+  title: string;
+  smallDescription: string;
+  currentSlug: string;
   titleImage: {
-    _type: string;
+    _type: "image";
     asset: {
       _ref: string;
-      _type: string;
+      _type: "reference";
     };
   };
 }
 
 export interface SingleBlog extends Omit<BlogsData, "smallDescription"> {
-  content: any;
+  content: PortableTextBlock[]; // instead of any
 }
