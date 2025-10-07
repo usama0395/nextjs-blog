@@ -1,8 +1,10 @@
+import { Image } from "sanity"
+
 export interface BlogsData {
   title:string  
   smallDescription:string  
   currentSlug:string  
-  titleImage:any
+  titleImage:Image
 }
 
 export interface SingleBlog extends Omit<BlogsData, "smallDescription"> {
