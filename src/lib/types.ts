@@ -15,5 +15,5 @@ export interface BlogsData {
 }
 
 export interface SingleBlog extends Omit<BlogsData, "smallDescription"> {
-  content: PortableTextBlock[]; // instead of any
+  content: PortableTextBlock[]; 
 }
