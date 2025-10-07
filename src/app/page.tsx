@@ -7,14 +7,14 @@ import Link from "next/link";
 
 export const revalidate = 30;
 
-async function getData() {
+async function getData (): Promise<BlogsData[]> {
   const query = `*[_type == 'blog'] | order(_createdAt desc){
     title,smallDescription,
       'currentSlug':slug.current,
       titleImage
   }`;
 
-  const data = await client.fetch(query);
+  const data = await client.fetch<BlogsData[]>(query);
   return data;
 }
 
